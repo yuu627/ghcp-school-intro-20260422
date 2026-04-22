@@ -1,0 +1,138 @@
+---
+---
+<section class="hero">
+  <span class="star s1">✦</span>
+  <span class="star s2">✧</span>
+  <span class="star s3">✦</span>
+  <span class="star s4">✧</span>
+  <span class="star s5">✦</span>
+
+  <div class="hero__inner">
+    <p class="hero__eyebrow">[ KAMINOYAMA MARUGOTO KOSEN ]</p>
+    <h1 class="hero__title">神山まるごと<br />高等専門学校</h1>
+    <p class="hero__sub">
+      テクノロジーとデザインで、<br class="br-sp" />
+      未来をまるごとつくる。
+    </p>
+    <div class="hero__links">
+      <a href="#about" class="btn">ABOUT ✦</a>
+      <a href="#admission" class="btn btn--ghost">ADMISSION ✧</a>
+    </div>
+  </div>
+
+  <!-- CRT スキャンライン -->
+  <div class="scanlines" aria-hidden="true"></div>
+</section>
+
+<style>
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(145deg, #f0e4ff 0%, #daeaff 55%, #ffe4f8 100%);
+  overflow: hidden;
+  padding: 6rem 2rem 4rem;
+}
+
+/* CRT スキャンライン (Y2K 演出) */
+.scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(100, 60, 160, 0.04) 3px,
+    rgba(100, 60, 160, 0.04) 4px
+  );
+  pointer-events: none;
+  animation: scanline 8s linear infinite;
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  animation: fadeUp 0.9s ease both;
+}
+
+.hero__eyebrow {
+  font-family: var(--font-y2k);
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  letter-spacing: 0.35em;
+  color: #9066c0;
+  margin-bottom: 1.2rem;
+  opacity: 0.85;
+}
+
+.hero__title {
+  font-family: var(--font-body);
+  font-size: clamp(2.8rem, 8vw, 5.5rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-dark);
+  text-shadow: 0 2px 32px rgba(160, 100, 220, 0.25);
+  margin-bottom: 1.6rem;
+}
+
+.hero__sub {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--text-mid);
+  line-height: 1.9;
+  margin-bottom: 2.8rem;
+}
+
+.hero__links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  font-family: var(--font-y2k);
+  font-size: 1.35rem;
+  letter-spacing: 0.18em;
+  padding: 0.7rem 2.4rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: linear-gradient(135deg, #d8b4fe, #93c5fd);
+  color: var(--text-dark);
+  box-shadow: 0 4px 20px rgba(180, 130, 230, 0.4);
+}
+.btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 32px rgba(180, 130, 230, 0.5);
+}
+.btn--ghost {
+  background: transparent;
+  border: 1.5px solid var(--accent);
+  color: var(--text-mid);
+  box-shadow: none;
+}
+.btn--ghost:hover {
+  background: var(--lavender);
+  box-shadow: 0 4px 20px var(--glow);
+}
+
+/* 浮かぶ星 */
+.star {
+  position: absolute;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  color: #c9a6e8;
+  pointer-events: none;
+  animation: twinkle 3.5s ease-in-out infinite;
+}
+.s1 { top: 12%; left: 8%;   animation-delay: 0s;   }
+.s2 { top: 18%; right: 12%; animation-delay: 0.8s; }
+.s3 { bottom: 20%; left: 15%; animation-delay: 1.6s; }
+.s4 { bottom: 14%; right: 8%; animation-delay: 0.4s; }
+.s5 { top: 50%; left: 4%;   animation-delay: 1.2s; font-size: 1rem; }
+
+@media (max-width: 480px) {
+  .br-sp { display: none; }
+}
+</style>

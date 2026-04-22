@@ -1,0 +1,50 @@
+---
+const subjects = [
+  { tag: 'CODE',    title: 'プログラミング & AI',   desc: 'Python・機械学習・Web 開発を基礎から応用まで。実際のプロダクト開発を通じてエンジニアリング力を高めます。' },
+  { tag: 'DESIGN',  title: 'デザイン思考',           desc: 'UI/UX・グラフィック・プロダクトデザイン。伝わる表現力と課題発見力を同時に培います。' },
+  { tag: 'BUILD',   title: 'プロジェクト学習',        desc: '地域課題を起点に、チームで本物のプロダクトを企画・開発・発表。5 年間で複数のプロジェクトを経験します。' },
+  { tag: 'GLOBAL',  title: '英語 & グローバル',      desc: '英語でのプレゼンや海外スタートアップとの交流。国際感覚と実務英語を同時に身につけます。' },
+  { tag: 'SCIENCE', title: '理数・サイエンス',        desc: '数学・物理を課題解決の道具として実践的に学習。抽象的な理論を具体的なプロダクトへ接続します。' },
+  { tag: 'COLLAB',  title: '企業・社会連携',          desc: '国内外の企業・NPO と連携した本物のフィールドワーク。社会人メンターと共にリアルな開発に挑みます。' },
+];
+---
+<section class="section" id="curriculum">
+  <h2 class="section-title">[ CURRICULUM ]</h2>
+  <div class="grid">
+    {subjects.map((s) => (
+      <div class="card">
+        <p class="tag">{s.tag}</p>
+        <h3>{s.title}</h3>
+        <p>{s.desc}</p>
+      </div>
+    ))}
+  </div>
+</section>
+<div class="divider"></div>
+
+<style>
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.6rem;
+}
+.tag {
+  font-family: var(--font-y2k);
+  font-size: 1rem;
+  letter-spacing: 0.28em;
+  color: #9066c0;
+  margin-bottom: 0.4rem;
+}
+.card h3 {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.7rem;
+}
+.card p {
+  font-size: 0.9rem;
+  line-height: 1.85;
+  color: var(--text-mid);
+}
+</style>

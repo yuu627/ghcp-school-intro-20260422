@@ -1,0 +1,93 @@
+---
+const steps = [
+  { num: '01', title: '学校説明会・見学',  desc: 'オープンキャンパスや個別見学を随時受け付けています。神山の空気を感じに来てください。' },
+  { num: '02', title: '出願書類提出',       desc: '志願書・学習歴・ポートフォリオ（任意）等を所定の期日までにご提出ください。' },
+  { num: '03', title: '選考',              desc: '書類選考・面接（オンライン可）を行います。スキルより「一緒にまちをつくる意欲」を重視します。' },
+  { num: '04', title: '合格・入学手続き',  desc: '合格通知後、入学金・寮費等の手続きを行ってください。奨学金制度についても別途ご案内します。' },
+];
+---
+<section class="section" id="admission">
+  <h2 class="section-title">[ ADMISSION ]</h2>
+  <div class="admission-intro card">
+    <p>
+      神山まるごと高専は、中学校卒業（見込み）の方を対象としています。
+      徳島県外・海外からの入学も歓迎。全寮制のため、国内どこからでもご入学いただけます。
+    </p>
+  </div>
+  <div class="steps">
+    {steps.map((s) => (
+      <div class="step">
+        <div class="step__num">{s.num}</div>
+        <div class="step__body">
+          <h3>{s.title}</h3>
+          <p>{s.desc}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+  <p class="note">
+    ※ 募集要項の詳細・最新スケジュールは
+    <a href="https://kamiyama.ac.jp" target="_blank" rel="noopener noreferrer">
+      公式サイト
+    </a>
+    をご確認ください。
+  </p>
+</section>
+<div class="divider"></div>
+
+<style>
+.admission-intro {
+  margin-bottom: 2.5rem;
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: var(--text-mid);
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+.step {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.step__num {
+  font-family: var(--font-y2k);
+  font-size: 2.5rem;
+  line-height: 1;
+  color: var(--accent);
+  text-shadow: 0 0 12px var(--glow);
+  min-width: 2.5rem;
+  flex-shrink: 0;
+}
+
+.step__body h3 {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.4rem;
+}
+
+.step__body p {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: var(--text-mid);
+}
+
+.note {
+  font-size: 0.85rem;
+  color: var(--text-mid);
+  opacity: 0.8;
+}
+
+.note a {
+  color: #8b5cf6;
+  text-underline-offset: 3px;
+}
+</style>
